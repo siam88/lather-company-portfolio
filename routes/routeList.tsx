@@ -1,0 +1,18 @@
+export const routesList = {
+  home: "/",
+  homeReviews: "/#reviews",
+  purchase: "/purchase",
+  purchaseLogin: "/purchase/login",
+  purchasePayment: "/purchase/payment",
+  purchasePaymentSuccess: "/purchase/book",
+  purchasePaymentFailed: "/purchase/payment/failed",
+  chapters: "/chapters",
+  tob: "/table-of-content",
+  termsOfUse: "/terms-of-use",
+  privacyPolicy: "/privacy-policy",
+  cookiesPolicy: "/cookie-policy",
+  refundPolicy: "/refund-policy",
+  aboutUs: "/about-us",
+  footer: "/#footer",
+  bookDetails: (pageNum: number) => `/book-details/${pageNum}`,
+};
