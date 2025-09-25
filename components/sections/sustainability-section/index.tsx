@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { sustainabilityCover } from "@/assets";
 
 const Index = () => {
@@ -29,11 +30,12 @@ const Index = () => {
       </div>
 
       {/* Right side */}
-      <div className="flex-1 flex items-center justify-center shadow-md">
-        <img
-          src={sustainabilityCover.src}
+      <div className="flex-1 flex items-center justify-center shadow-md relative h-64 md:h-screen">
+        <Image
+          src={sustainabilityCover}
           alt="Sustainability Cover"
-          className="w-full h-64 md:h-screen object-cover"
+          fill
+          className="object-cover"
         />
       </div>
     </section>

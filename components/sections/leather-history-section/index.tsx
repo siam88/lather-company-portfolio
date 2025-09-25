@@ -1,4 +1,5 @@
 import { leatherExperienceMaking, leatherPelle } from "@/assets";
+import Image from "next/image";
 import React from "react";
 
 const LeatherHistorySection = () => {
@@ -31,22 +32,24 @@ const LeatherHistorySection = () => {
               service of the entire supply chain.
             </p>
           </div>
-          <div className="mt-6 md:mt-10 overflow-hidden rounded-xl shadow-lg">
-            <img
-              src={leatherExperienceMaking.src}
+          <div className="mt-6 md:mt-10 overflow-hidden rounded-xl shadow-lg relative w-full h-64 sm:h-80 md:h-96">
+            <Image
+              src={leatherExperienceMaking}
               alt="Italian Leather"
-              className="w-full object-cover transform hover:scale-105 transition duration-500"
+              fill
+              className="object-cover transform hover:scale-105 transition duration-500"
             />
           </div>
         </div>
 
         {/* Second Div */}
         <div className="flex-1 flex flex-col justify-between mt-10 md:mt-0">
-          <div className="overflow-hidden rounded-xl shadow-lg mb-6 md:mb-8">
-            <img
-              src={leatherPelle.src}
+          <div className="overflow-hidden rounded-xl shadow-lg mb-6 md:mb-8 relative w-full h-64 sm:h-80 md:h-96">
+            <Image
+              src={leatherPelle}
               alt="Leather History"
-              className="w-full object-cover transform hover:scale-105 transition duration-500"
+              fill
+              className="object-cover transform hover:scale-105 transition duration-500"
             />
           </div>
           <div>

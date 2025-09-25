@@ -1,15 +1,17 @@
 import React from "react";
+import Image from "next/image";
 import { leatherMeaningCover } from "@/assets";
 
 const LeatherMeaningSection = () => {
   return (
     <section className="min-h-screen flex flex-col md:flex-row">
       {/* Left side with image */}
-      <div className="flex-1 flex items-center justify-center shadow-md">
-        <img
-          src={leatherMeaningCover.src}
+      <div className="flex-1 flex items-center justify-center shadow-md relative h-64 md:h-screen">
+        <Image
+          src={leatherMeaningCover}
           alt="Leather Meaning Cover"
-          className="w-full h-64 md:h-screen object-cover"
+          fill
+          className="object-cover"
         />
       </div>
 

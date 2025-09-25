@@ -1,26 +1,24 @@
 "use client";
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Parallax, Pagination, Navigation, Keyboard } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import { Pagination, Navigation, Keyboard } from "swiper/modules";
+import type { Swiper as SwiperClass } from "swiper/types";
+
+import Image from "next/image";
 import { sustainabilityCover } from "@/assets";
-import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import {
   MdKeyboardArrowRight,
   MdOutlineKeyboardArrowLeft,
 } from "react-icons/md";
 
-const LeatherProductionProcessSection = () => {
-  const sliderImages = [
-    "/images/leather1.jpg",
-    "/images/leather2.jpg",
-    "/images/leather3.jpg",
-    "/images/leather4.jpg",
-  ];
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
-  const [swiperInstance, setSwiperInstance] = useState<any>(null);
+const LeatherProductionProcessSection = () => {
+  const [swiperInstance, setSwiperInstance] = useState<SwiperClass | null>(
+    null
+  );
   const [currentSlide, setCurrentSlide] = useState(1);
 
   const slides = [
@@ -28,23 +26,24 @@ const LeatherProductionProcessSection = () => {
       title: "Tanning",
       description:
         " All the steps leading to the finished article, including dyeing and the application of surface treatments (finishing) to improve the appearance and properties of the leather.",
-      image: sustainabilityCover.src,
+      image: sustainabilityCover,
     },
     {
       title: "Processing",
       description:
         "The transformation of tanned hides into finished leather.All the steps leading to the finished article, including dyeing and the application of surface treatments (finishing) to improve the appearance and properties of the leather.",
-      image: sustainabilityCover.src,
+      image: sustainabilityCover,
     },
     {
       title: "Finished Products",
       description:
         "The final stage where leather is crafted into various products.All the steps leading to the finished article, including dyeing and the application of surface treatments (finishing) to improve the appearance and properties of the leather.",
-      image: sustainabilityCover.src,
+      image: sustainabilityCover,
     },
   ];
 
   const totalSlides = slides.length;
+
   return (
     <>
       <section
@@ -76,12 +75,13 @@ const LeatherProductionProcessSection = () => {
           </div>
         </div>
       </section>
+
       {/* Slider Section */}
       <section style={{ backgroundColor: "#e8e4e1" }}>
-        <p className="text-xl text-gray-600  tracking-wide underline w-full  mb-20 text-center">
+        <p className="text-xl text-gray-600 tracking-wide underline w-full mb-20 text-center">
           Discover the stages of tanning
         </p>
-        <div className="flex flex-col md:flex-row justify-center items-center  px-4 md:px-20 gap-10 md:gap-20">
+        <div className="flex flex-col md:flex-row justify-center items-center px-4 md:px-20 gap-10 md:gap-20">
           {/* Left Title (Top on Mobile) */}
           <div className="flex md:hidden flex-col justify-center items-center text-center">
             <h2 className="text-lg sm:text-xl font-bold text-gray-800">
@@ -123,13 +123,14 @@ const LeatherProductionProcessSection = () => {
               {slides.map((slide, index) => (
                 <SwiperSlide key={index}>
                   <div
-                    className="rounded-lg overflow-hidden shadow-xl"
+                    className="rounded-lg overflow-hidden shadow-xl relative w-full"
                     style={{ aspectRatio: "576 / 705" }}
                   >
-                    <img
+                    <Image
                       src={slide.image}
                       alt={slide.title}
-                      className="w-full h-full object-cover"
+                      fill
+                      className="object-cover"
                     />
                   </div>
                 </SwiperSlide>
