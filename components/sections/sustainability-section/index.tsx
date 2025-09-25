@@ -3,11 +3,11 @@ import { sustainabilityCover } from "@/assets";
 
 const Index = () => {
   return (
-    <section className="min-h-screen flex">
+    <section className="min-h-screen flex flex-col md:flex-row">
       {/* Left side */}
-      <div className="flex-1 flex flex-col justify-center px-6 md:px-20 py-16 bg-white">
+      <div className="flex-1 flex flex-col justify-center px-6 md:px-20 py-12 bg-white">
         <p className="text-sm text-gray-500 mb-2 uppercase">Sustainability</p>
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
           Leather: an example of circular economy
         </h1>
         <p className="text-gray-700 leading-relaxed mb-8">
@@ -28,12 +28,12 @@ const Index = () => {
         </button>
       </div>
 
-      {/* Right side with full image fitting the viewport */}
-      <div className="flex-1 flex items-center justify-center h-screen shadow-md ">
+      {/* Right side */}
+      <div className="flex-1 flex items-center justify-center shadow-md">
         <img
           src={sustainabilityCover.src}
           alt="Sustainability Cover"
-          className="max-w-full max-h-full object-contain"
+          className="w-full h-64 md:h-screen object-cover"
         />
       </div>
     </section>
