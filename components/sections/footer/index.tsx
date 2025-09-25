@@ -16,7 +16,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-white text-gray-900 border-t border-gray-200 mt-16 min-h-screen flex flex-col justify-between relative">
+    <footer className="bg-white text-gray-900 border-t border-gray-200  min-h-screen flex flex-col justify-between relative">
       {/* Company Name at the top */}
       <div className="max-w-7xl mx-auto px-6 py-8 text-center">
         {/* Optional logo above name */}

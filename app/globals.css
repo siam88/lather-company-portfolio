@@ -7,8 +7,9 @@
   --background: #ffffff;
   --foreground: #171717;
 
-  /* Font variable injected from Next.js font */
+  /* Font variables injected from Next.js fonts */
   --font-dm-serif: var(--font-dm-serif);
+  --font-rubik: var(--font-rubik);
 }
 
 /* -------------------------------
@@ -17,7 +18,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-serif: var(--font-dm-serif); /* updated to DM Serif Text */
+  --font-serif: var(--font-dm-serif); /* headings */
+  --font-sans: var(--font-rubik); /* body / lighter text */
 }
 
 /* -------------------------------
@@ -36,7 +38,55 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-dm-serif), serif; /* use DM Serif Text */
+  font-family: var(--font-rubik), sans-serif; /* default body text */
+  font-weight: 300; /* lighter text */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* -------------------------------
+   Headings
+---------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-dm-serif), serif; /* headings */
+  font-weight: 400; /* DM Serif Text only has 400 */
+}
+
+/* -------------------------------
+   Utility classes for Tailwind / JSX
+---------------------------------*/
+.font-dm-serif {
+  font-family: var(--font-dm-serif), serif;
+}
+
+.font-rubik {
+  font-family: var(--font-rubik), sans-serif;
+  font-weight: 300; /* lighter text by default */
+}
+
+/* -------------------------------
+   Fade-up animation
+---------------------------------*/
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.7s forwards;
+}
+
+.animate-fade-up-delay {
+  animation-delay: 0.15s;
 }
